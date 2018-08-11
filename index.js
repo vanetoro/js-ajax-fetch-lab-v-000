@@ -34,8 +34,9 @@ function createIssue() {
     return response.json()
   })
   .then(function(data){
+    getIssues()
   })
-  getIssues()
+  
 }
 
 function showResults(json) {
