@@ -18,8 +18,8 @@ function showIssues(json) {
 }
 
 function createIssue() {
-  let title =  document.getElementbyId('title')
-  let body =  document.getElementbyId('body')
+  let title =  document.getElementById('title')
+  let body =  document.getElementById('body')
   const postData = { title: title, body: body }
 
 
