@@ -1,4 +1,4 @@
-
+const token  = ''
 const issuesRepo = 'https://api.github.com/repos/vanetoro/javascript-fetch-lab/issues'
 
 function getIssues() {
@@ -57,6 +57,9 @@ function forkRepo() {
       let jData = JSON.stringify(data)
       showResults(data)
   })
+
+  fetch(`https://api.github.com/repos/vanetoro/${repo}/forks`)
+
 }
 
 function getToken() {
@@ -66,15 +69,3 @@ function getToken() {
   return token
 }
 
-// const token = 'YOUR_TOKEN_HERE';
-// const postData = {
-//   body: 'Great stuff'
-// };
-// //
-// fetch('https://api.github.com/repos/:your_ghname/:your_repo/commits/:sha/comments', {
-//   method: 'POST',
-//   body: JSON.stringify(postData),
-//   headers: {
-//     Authorization: `token ${token}`
-//   }
-// }).then(res => console.log(res));
