@@ -18,13 +18,13 @@ function showIssues(json) {
 }
 
 function createIssue() {
-  let title =  $("#title").val()
-  let body = $("#body").val()
+  let title =  document.getElementById('title').value
+  let body =  document.getElementById('body').value
   const postData = { title: title, body: body }
 
 
   fetch(`${issuesRepo}`, {
-    method: 'POST',
+    method: 'post',
     body: JSON.stringify(postData),
     headers: {
       Authorization: `token ${getToken()}`,
@@ -34,8 +34,9 @@ function createIssue() {
     return response.json()
   })
   .then(function(data){
+    getIssues()
   })
-  getIssues()
+  
 }
 
 function showResults(json) {
@@ -45,7 +46,7 @@ function showResults(json) {
 function forkRepo() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   fetch(`https://api.github.com/repos/${repo}/forks`, {
-    method: 'POST',
+    method: 'post',
     headers: {
       Authorization: `token ${getToken()}`
     }
